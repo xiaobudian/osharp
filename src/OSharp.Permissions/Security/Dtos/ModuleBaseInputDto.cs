@@ -8,6 +8,8 @@
 // -----------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 using OSharp.Core.Data;
 
@@ -24,6 +26,7 @@ namespace OSharp.Core.Security.Dtos
         /// <summary>
         /// 获取或设置 模块名称
         /// </summary>
+        [Required]
         public string Name { get; set; }
 
         /// <summary>
@@ -34,7 +37,7 @@ namespace OSharp.Core.Security.Dtos
         /// <summary>
         /// 获取或设置 排序码
         /// </summary>
-        public int OrderCode { get; set; }
+        public double OrderCode { get; set; }
 
         /// <summary>
         /// 获取或设置 父模块编号

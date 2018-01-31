@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -202,8 +203,10 @@ namespace OSharp.Demo.Consoles
 
         private static void Method06()
         {
-            string url = Console.ReadLine();
-            Console.WriteLine(url.IsUrl());
+            string str = "我是中文HelloWorld123".ToBase64String();
+            Console.WriteLine(str);
+            str = str.FromBase64String();
+            Console.WriteLine(str);
         }
 
         private static void Method07()
@@ -242,7 +245,15 @@ namespace OSharp.Demo.Consoles
 
         private static void Method09()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("请输入字符串source");
+            string source = Console.ReadLine();
+            Console.WriteLine("请输入字符串target");
+            string target = Console.ReadLine();
+
+            double point;
+            Console.WriteLine(source.LevenshteinDistance(target, out point, true));
+            Console.WriteLine(point);
+            Console.WriteLine(source.GetSimilarityWith(target));
         }
 
         private static void Method10()
